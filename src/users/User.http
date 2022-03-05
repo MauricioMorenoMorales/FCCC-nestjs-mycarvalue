@@ -1,0 +1,28 @@
+@host = http://localhost:3000/auth
+
+### Create a new user
+POST {{ host }}/signup
+Content-Type: application/json
+
+{
+	"email": "user1@sdf.com",
+	"password": "supersecretpassword"
+}
+
+### Find a particular user with a given ID
+GET {{ host }}/1
+
+### Find all users with a given email
+GET {{ host }}?email=user1@sdf.com
+
+### Delete an user with a given ID number
+DELETE {{ host }}/3
+
+### Update user with a given ID number and body payload
+PATCH {{ host }}/1
+Content-Type: application/json
+
+{
+	"email": "user0@sdf.com",
+	"password": "supersecretpassword2"
+}
