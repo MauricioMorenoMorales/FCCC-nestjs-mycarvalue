@@ -1,7 +1,7 @@
-@host = http://localhost:3000/auth
+@moduleEndpoint = {{ host }}/auth
 
 ### Create a new user
-POST {{ host }}/signup
+POST {{ moduleEndpoint }}/signup
 Content-Type: application/json
 
 {
@@ -10,16 +10,16 @@ Content-Type: application/json
 }
 
 ### Find a particular user with a given ID
-GET {{ host }}/1
+GET {{ moduleEndpoint }}/1
 
 ### Find all users with a given email
-GET {{ host }}?email=user1@sdf.com
+GET {{ moduleEndpoint }}?email=user1@sdf.com
 
 ### Delete an user with a given ID number
-DELETE {{ host }}/3
+DELETE {{ moduleEndpoint }}/3
 
 ### Update user with a given ID number and body payload
-PATCH {{ host }}/1
+PATCH {{ moduleEndpoint }}/1
 Content-Type: application/json
 
 {
