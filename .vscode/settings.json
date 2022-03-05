@@ -1,8 +1,7 @@
 {
 	"rest-client.environmentVariables": {
 		"development": {
-			"host": "http://localhost:3000",
-			"test": "this is a test string"
+			"host": "http://localhost:3000"
 		},
 		"production": {}
 	}
