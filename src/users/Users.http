@@ -11,6 +11,8 @@ Content-Type: application/json
 
 ### Find a particular user with a given ID
 GET {{ moduleEndpoint }}/1
+### Find a particular user with a given ID /BAD/
+GET {{ moduleEndpoint }}/919283
 
 ### Find all users with a given email
 GET {{ moduleEndpoint }}?email=user1@sdf.com
