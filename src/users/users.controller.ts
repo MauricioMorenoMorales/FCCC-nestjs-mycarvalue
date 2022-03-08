@@ -16,14 +16,23 @@ import { UsersService } from './users.service';
 import { UpdateUserDto } from './dtos/update-user.dto';
 import { UserDto } from './dtos/user.dto';
 import { Serialize } from 'src/interceptors/serialize.interceptor';
+import { AuthService } from './auth.service';
 
 @Controller('auth')
 @Serialize(UserDto)
 export class UsersController {
-	constructor(private usersService: UsersService) {}
+	constructor(
+		private usersService: UsersService,
+		private authService: AuthService,
+	) {}
 	@Post('signup')
 	public createUser(@Body() body: CreateUserDto) {
-		this.usersService.create(body.email, body.password);
+		return this.authService.signup(body.email, body.password);
+	}
+
+	@Post('signin')
+	public signin(@Body() body: CreateUserDto) {
+		return this.authService.signin(body.email, body.password);
 	}
 
 	//? @UseInterceptors(ClassSerializerInterceptor) // requiere que el entity posea un decorador exclude

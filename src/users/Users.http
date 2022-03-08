@@ -5,12 +5,31 @@ POST {{ moduleEndpoint }}/signup
 Content-Type: application/json
 
 {
+	"email": "user4@sdf.com",
+	"password": "supersecretpassword"
+}
+
+### Login an already existing account
+POST {{ moduleEndpoint }}/signin
+Content-Type: application/json
+
+{
+	"email": "user4@sdf.com",
+	"password": "supersecretpassword"
+}
+
+### Login an already existing account || BAD ||
+POST {{ moduleEndpoint }}/signin
+Content-Type: application/json
+
+{
 	"email": "user1@sdf.com",
 	"password": "supersecretpassword"
 }
 
 ### Find a particular user with a given ID
-GET {{ moduleEndpoint }}/1
+GET {{ moduleEndpoint }}/4
+
 ### Find a particular user with a given ID /BAD/
 GET {{ moduleEndpoint }}/919283
 
